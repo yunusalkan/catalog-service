@@ -27,7 +27,7 @@ jobs:
         acs-report-enable: true
      - name: Upload vulnerability report
        uses: github/codeq1-action/upload-sarif@v2
-       if: sucess() || failure()
+       if: success() || failure()
        with:
           sarif_file: ${{ steps.scan.output.sarif }}
      - name: Build, unit tests and integration tests
